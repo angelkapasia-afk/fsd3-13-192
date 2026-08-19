@@ -9,7 +9,7 @@
     "id": 203,
     "name": "lenovo laptop",
     "price": 230000,
-    "qty": 2
+    "qty": 4
   },
   {
     "id": 204,
@@ -17,4 +17,5 @@
     "price": 300000,
     "qty": 3
   }
+
 ]
