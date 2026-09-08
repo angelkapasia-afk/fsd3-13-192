@@ -1,0 +1,500 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pot</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f1f8f3;
+            color: #20352a;
+        }
+
+        /* Navbar */
+        nav {
+            background: #174d2c;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 25px;
+        }
+
+        nav h1 span {
+            color: #8ee38e;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #8ee38e;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 430px;
+            padding: 70px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #174d2c, #3c8d52);
+            color: white;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h2 {
+            font-size: 52px;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 span {
+            color: #a8f0a8;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #e2f4e5;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #a8f0a8;
+            color: #174d2c;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Pot */
+        .pot {
+            width: 220px;
+            height: 250px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .plant {
+            position: absolute;
+            top: 0;
+            font-size: 100px;
+        }
+
+        .pot-body {
+            width: 170px;
+            height: 130px;
+            background: #c87945;
+            border-radius: 15px 15px 45px 45px;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            padding: 60px 7%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .title h2 {
+            font-size: 32px;
+            color: #174d2c;
+        }
+
+        .title p {
+            margin-top: 8px;
+            color: #66806e;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #617567;
+            font-size: 15px;
+        }
+
+        .value {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 8px 0;
+            color: #174d2c;
+        }
+
+        .good {
+            color: #159b57;
+            font-weight: bold;
+        }
+
+        .warning {
+            color: #d48a00;
+            font-weight: bold;
+        }
+
+        /* Information */
+        .info {
+            padding: 10px 7% 70px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .panel {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .panel h2 {
+            color: #174d2c;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 18px;
+            background: #dcebe0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 12px 0 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #3c8d52;
+            border-radius: 20px;
+        }
+
+        .status {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #f0f8f2;
+            border-radius: 12px;
+        }
+
+        .status strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Features */
+        .features {
+            background: #174d2c;
+            color: white;
+            padding: 60px 7%;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #d8eadc;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #103820;
+            color: #cce0d0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 38px;
+            }
+
+            .cards,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>🌱 Smart<span>Pot</span></h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#features">Features</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h2>Grow Smarter with <span>Smart Pot</span></h2>
+
+            <p>
+                An intelligent plant pot that monitors soil moisture,
+                temperature, water level and plant health to help your
+                plants grow better.
+            </p>
+
+            <a href="#dashboard" class="btn">View Dashboard</a>
+        </div>
+
+        <div class="pot">
+            <div class="plant">🌱</div>
+            <div class="pot-body"></div>
+        </div>
+
+    </section>
+
+    <!-- Dashboard -->
+    <section class="dashboard" id="dashboard">
+
+        <div class="title">
+            <h2>Plant Health Dashboard</h2>
+            <p>Real-time monitoring of your smart pot</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💧</div>
+                <h3>Soil Moisture</h3>
+                <div class="value">68%</div>
+                <p class="good">● Optimal</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌡️</div>
+                <h3>Temperature</h3>
+                <div class="value">25°C</div>
+                <p class="good">● Normal</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚰</div>
+                <h3>Water Level</h3>
+                <div class="value">75%</div>
+                <p class="good">● Sufficient</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌿</div>
+                <h3>Plant Health</h3>
+                <div class="value">92%</div>
+                <p class="good">● Healthy</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Information -->
+    <section class="info">
+
+        <div class="panel">
+            <h2>💧 Soil Moisture</h2>
+
+            <p>Current moisture level</p>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:68%;"></div>
+            </div>
+
+            <p><strong>68%</strong> — Ideal moisture level</p>
+
+            <br>
+
+            <p class="good">✓ No watering required right now.</p>
+        </div>
+
+        <div class="panel">
+            <h2>🔔 Smart Status</h2>
+
+            <div class="status">
+                <strong>🌱 Plant Health</strong>
+                Healthy growth detected.
+            </div>
+
+            <div class="status">
+                <strong>💧 Watering</strong>
+                Next watering recommended in 2 days.
+            </div>
+
+            <div class="status">
+                <strong>☀️ Light</strong>
+                Sufficient sunlight available.
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <h2>Smart Pot Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">💧</div>
+                <h3>Moisture Monitoring</h3>
+                <p>
+                    Measures soil moisture and helps prevent
+                    overwatering or underwatering.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌡️</div>
+                <h3>Temperature Sensor</h3>
+                <p>
+                    Monitors the surrounding temperature to
+                    maintain suitable plant conditions.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🚰</div>
+                <h3>Smart Watering</h3>
+                <p>
+                    Detects when the plant needs water and
+                    provides intelligent watering alerts.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Remote Monitoring</h3>
+                <p>
+                    Monitor your plant's condition through a
+                    digital dashboard.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>Smart Analysis</h3>
+                <p>
+                    Uses sensor data to understand plant
+                    conditions and provide useful insights.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌱</div>
+                <h3>Healthy Growth</h3>
+                <p>
+                    Helps maintain better conditions for
+                    healthy and sustainable plant growth.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🌱 Smart Pot | Making Plant Care Smarter</p>
+    </footer>
+
+</body>
+</html>
+```

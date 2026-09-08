@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroMini - Small Water Bottle</title>
+
+```
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f2f8ff;
+        color: #222;
+    }
+
+    header {
+        background: #0077b6;
+        color: white;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .product {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+        width: 45%;
+        text-align: center;
+    }
+
+    .product-image img {
+        width: 280px;
+        height: 400px;
+        object-fit: contain;
+    }
+
+    .product-info {
+        width: 55%;
+    }
+
+    .product-info h2 {
+        font-size: 36px;
+        color: #0077b6;
+        margin-bottom: 15px;
+    }
+
+    .rating {
+        color: #f4a261;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .price {
+        font-size: 30px;
+        font-weight: bold;
+        color: #023e8a;
+        margin-bottom: 20px;
+    }
+
+    .features {
+        list-style: none;
+        margin-bottom: 25px;
+    }
+
+    .features li {
+        margin: 10px 0;
+    }
+
+    .quantity {
+        margin-bottom: 20px;
+    }
+
+    .quantity input {
+        width: 60px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .buy-btn {
+        background: #0077b6;
+        color: white;
+        border: none;
+        padding: 15px 35px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .buy-btn:hover {
+        background: #023e8a;
+    }
+
+    footer {
+        text-align: center;
+        background: #023e8a;
+        color: white;
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+        .product {
+            flex-direction: column;
+            padding: 25px;
+        }
+
+        .product-image,
+        .product-info {
+            width: 100%;
+            text-align: center;
+        }
+
+        nav {
+            display: none;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <h1>HydroMini</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="product">
+
+        <div class="product-image">
+            <img 
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=500&q=80"
+                alt="Small Water Bottle">
+        </div>
+
+        <div class="product-info">
+
+            <h2>Mini Water Bottle</h2>
+
+            <div class="rating">
+                ★★★★★ (4.8/5)
+            </div>
+
+            <p class="description">
+                Stay hydrated wherever you go with our compact and stylish
+                Mini Water Bottle. Perfect for school, college, office,
+                gym, and travel.
+            </p>
+
+            <div class="price">₹299</div>
+
+            <ul class="features">
+                <li>💧 Capacity: 500 ml</li>
+                <li>🛡️ BPA-Free Material</li>
+                <li>🎒 Lightweight & Portable</li>
+                <li>🔒 Leak-Proof Cap</li>
+                <li>♻️ Reusable & Eco-Friendly</li>
+            </ul>
+
+            <div class="quantity">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+
+            <button class="buy-btn" onclick="buyNow()">
+                Buy Now
+            </button>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 HydroMini | Stay Hydrated 💧</p>
+</footer>
+
+<script>
+    function buyNow() {
+        let quantity = document.getElementById("quantity").value;
+        alert("Thank you for buying " + quantity + " Mini Water Bottle(s)!");
+    }
+</script>
+```
+
+</body>
+</html>
