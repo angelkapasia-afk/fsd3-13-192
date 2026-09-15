@@ -54,3 +54,26 @@ the content type and status code can be send back to client by two ways
 1. res.writeHead
 2. res.setHeader
 3. res.statusCode
+
+## send html file to client
+1. html file
+- read html filr using createReadStream
+- pipe it with res object
+2. html content
+- send any html tags/content by using  res.end('<any html tag>')
+
+## JSON (java script object notation)
+- server returns data only not html content because html content will be written by frontend developer. the data is in json format
+
+- json always stores data in key value pair enclosed by curly brackets {}
+- array can be store by square bracket []
+- one pair of curly bracket will represent one object and its property will be seperated by -coma(,)
+```
+{
+    id:1,
+    name:'Mobile',
+    price: 25000,
+    rating:4.5,
+    review:200
+} 
+```
