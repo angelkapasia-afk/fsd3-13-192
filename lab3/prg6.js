@@ -18,9 +18,21 @@ const server = http.createServer((req, res) => {
     });
   
 
-  } else if (req.url === "/" && req.method === "PUT") {
-    res.statusCode = 200;
-    res.end("PUT Request");
+  } else if (req.url.startsWith("/products/") && req.method === "PUT") {
+    const productID = req.url.split('/').pop();
+    console.log('update Product id:', productID);
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk;
+    });
+    req.on("end", () => {
+      const product = JSON.parse(body);
+      product.id = productID
+      res.statusCode = 200;
+      res.end(JSON.stringify({ msg: "product UPDATED", product }));
+    });
+  
+   
   } else if (req.url === "/" && req.method === "DELETE") {
     res.statusCode = 200;
     res.end("DELETE Request");
