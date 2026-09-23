@@ -89,3 +89,11 @@ headers is used to tell the client, the type of data send by the server it maybe
 
 7. res.
 8. res.
+## for get request
+- no parameter will be passed to the server when we recieve all item.
+## for post request
+- post- to add record we pass the value from body section in JSON format of api tester(echo api).
+## for del product
+- to delete any product we pass parameter that  is id of the product from url.
+## for put request(patch)
+- to update any product ... we pass id from url and data to update from body.

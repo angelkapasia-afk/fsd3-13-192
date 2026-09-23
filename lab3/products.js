@@ -20,3 +20,21 @@ products.splice(item,1)
 console.log("products remaining:", products);
 return true;
 };
+//create a function update any function given pid and call that function into prg6.js and verify its working by echo api
+export const updateProduct = (pid,updateItem)=>{
+    const item = products.findIndex((prd)=>prd.id ===pid);
+    if (item==-1){
+        return false;
+    }
+    updateItem.id = pid;
+    products[item] =updateItem;
+
+    return updateItem;
+};
+export const getProductById = (pid) => {
+    const index = products.findIndex((prd) => prd.id ===pid);
+    if(index==-1) {
+        return false;
+    }
+    return products[index];
+};
