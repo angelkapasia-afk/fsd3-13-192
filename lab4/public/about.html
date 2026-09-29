@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aura X - The Future in Your Palm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#030712',
+                        cardBg: '#0b0f19',
+                        accentCyan: '#06b6d4',
+                        accentViolet: '#8b5cf6',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(1deg)' },
+                        },
+                        glow: {
+                            '0%': { opacity: 0.4, transform: 'scale(1)' },
+                            '100%': { opacity: 0.8, transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #f3f4f6; overflow-x: hidden; }
+        .glow-effect {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(139, 92, 246, 0.4);
+        }
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .glass-panel {
+            background: rgba(11, 15, 25, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 selection:bg-cyan-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center shadow-lg shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-atom text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-indigo-300 to-violet-500 bg-clip-text text-transparent">AURA X</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="index.html#features" class="hover:text-cyan-400 transition-colors">Features</a>
+                <a href="about.html" class="text-cyan-400 font-semibold">About Us</a>
+                <a href="index.html#specs" class="hover:text-cyan-400 transition-colors">Specs</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="relative group px-6 py-2.5 rounded-full font-semibold text-sm overflow-hidden shadow-xl shadow-cyan-500/20 transition-all duration-300 hover:scale-105 active:scale-95 inline-block text-center">
+                    <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-violet-600 transition-all duration-300 group-hover:opacity-90"></span>
+                    <span class="relative text-white flex items-center space-x-2">
+                        <span>Pre-Order</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-36 pb-20 overflow-hidden bg-grid-pattern">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none animate-glow"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-widest shadow-inner">
+                <span>Our Vision & Story</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-none">
+                Reinventing how humanity <br/>
+                <span class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-500 bg-clip-text text-transparent glow-effect">connects with technology.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+                Founded in 2023 by aerospace engineers and quantum physicists, Aura X was born out of a single bold question: What if smartphones transcended flat glass and truly integrated with human perception?
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 border-t border-gray-900 bg-gray-950/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="text-4xl font-black text-cyan-400 mb-2">3+ Years</div>
+                    <div class="text-sm font-semibold text-white mb-1">R&D Breakthroughs</div>
+                    <p class="text-xs text-gray-400">Pioneering micro-lens holographic arrays and solid-state silicon anodes.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="text-4xl font-black text-violet-400 mb-2">120+</div>
+                    <div class="text-sm font-semibold text-white mb-1">Global Patents</div>
+                    <p class="text-xs text-gray-400">Protecting groundbreaking innovations in optics, neural chips, and aerospace alloys.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl">
+                    <div class="text-4xl font-black text-cyan-400 mb-2">Zero Carbon</div>
+                    <div class="text-sm font-semibold text-white mb-1">Sustainable Manufacturing</div>
+                    <p class="text-xs text-gray-400">Forged in 100% renewable-powered facilities using recycled Grade 5 titanium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Core Philosophy</h2>
+                <p class="text-3xl sm:text-5xl font-black tracking-tight text-white">Built without compromise.</p>
+                <p class="text-gray-400 text-base sm:text-lg">We adhere to three steadfast principles in everything we engineer.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-3xl space-y-4 border border-cyan-500/20 hover:border-cyan-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Radical Innovation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We refuse incremental upgrades. If a technology doesn't fundamentally improve how you interact with the digital world, we don't build it.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl space-y-4 border border-violet-500/20 hover:border-violet-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Unmatched Craftsmanship</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Aerospace titanium, scratch-resistant sapphire crystal, and tactile feedback engineered to feel alive in your palm.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl space-y-4 border border-cyan-500/20 hover:border-cyan-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Privacy First</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Your neural data and personal information never leave your device. Encrypted at the hardware level with Quantum ID verification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-950/80 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Leadership</h2>
+                <p class="text-3xl sm:text-5xl font-black tracking-tight text-white">Meet the innovators.</p>
+                <p class="text-gray-400 text-base sm:text-lg">Visionaries from SpaceX, CERN, and leading AI labs uniting to build the future.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Leader 1 -->
+                <div class="glass-panel p-6 rounded-3xl text-center space-y-4">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-cyan-500/30">
+                        EL
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Elena Vance</h3>
+                        <div class="text-xs text-cyan-400 font-semibold uppercase tracking-wider mt-0.5">CEO & Co-Founder</div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Former Aerospace Lead Systems Engineer with a passion for human-computer symbiosis and holographic display matrices.</p>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="glass-panel p-6 rounded-3xl text-center space-y-4">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-violet-600 to-cyan-400 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-violet-500/30">
+                        DK
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Dr. Kenji Sato</h3>
+                        <div class="text-xs text-violet-400 font-semibold uppercase tracking-wider mt-0.5">Chief Technology Officer</div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Quantum physicist specializing in neural microprocessors and optical wavefront modulation for 3D depth projection.</p>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="glass-panel p-6 rounded-3xl text-center space-y-4">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-cyan-400 to-indigo-600 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-cyan-500/30">
+                        SM
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Sofia Morales</h3>
+                        <div class="text-xs text-cyan-400 font-semibold uppercase tracking-wider mt-0.5">Head of Industrial Design</div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Award-winning minimalist designer focused on sustainable materials, titanium ergonomics, and seamless glass transitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-900 bg-gray-950 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-atom text-sm"></i>
+                </div>
+                <span class="text-lg font-black text-white tracking-wider">AURA X</span>
+            </div>
+            <div class="flex space-x-6 text-xs text-gray-400">
+                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="about.html" class="text-cyan-400 transition-colors">About Us</a>
+                <a href="#" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-cyan-400 transition-colors">Support</a>
+            </div>
+            <div class="text-xs text-gray-500">
+                &copy; 2026 Aura Technologies Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
