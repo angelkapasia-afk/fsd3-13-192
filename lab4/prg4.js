@@ -11,10 +11,19 @@ app.get("/", (req,res) =>{
 app.get("/api/products", (req,res)=>{
     const modiProducts = products.map(
         ({reviews, description, ...rest })=> rest);
+
     
     res.status(200).json({count:products.length, data:products, msg:"success"})
 });
+app.get("/api/products/:id",(req,res) => {
+    const {id } =req.params;
+    const p = products.find((item)=>item.id===Number(id));
+    if(p)
+        res.status(200).json({status:true,data:p});
+    else
+        res.status(400).json({status: false, msg: `product not found with id: ${id}`});
 
+});
 
 
 
