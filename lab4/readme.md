@@ -14,3 +14,24 @@
 8. add folderName/node_modules in .gitignore
 9. send fxn is used to revert beack contents to the client it may be html, json , html file, plain text
 10. we can also add status code with status function it can be chain with send fxn.
+## MAP
+-> this fxn is used to iterate any array. it must return new array
+
+```
+array.map((item)=>{
+   return
+})
+
+array.map((item)=> ())
+```
+-> in first syntax we have to use explicit return keyword whereas in syntax 2 does not require
+## exclude no. of properties from any json object
+```
+const {p1, p2, ...rest} = products;
+log(rest);
+```
+## search
+-> to search any item in json array we use find method it will return NULL on unsuccessfull and object on successfull
+```
+array.find((item)=> item.id ===id);
+```
