@@ -26,3 +26,12 @@
 2. it must return html
 3. must be closed at the calling time
 4. it can be used anywhere any times
+
+
+## REACT COMPONENT
+- Any web app is build by different components
+- it is special type of js function that must return html contents
+- it may call user defined html tags
+- it must be called inside angle <>
+- must be closed</>
+- the first char must be capital letter
